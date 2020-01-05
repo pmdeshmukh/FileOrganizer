@@ -33,12 +33,18 @@ namespace FileOrganizer
                 // Organize the files
                 fileOrganizerHelper.OrganizeFiles(sourcePath, destinationPath);
                 Console.WriteLine($"Organized files successfully from \"{sourcePath}\" to \"{destinationPath}\"!! Please check \"{destinationPath}\" for output.");
-                Console.WriteLine("Press any key to exit!");
-                Console.ReadKey();
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Error occurred. Please make sure you have set correct source and destination file names in config. Please check below error for more details!");
+                Console.WriteLine();
                 logger.Error("An exception occurred while organizing files! Please check stacktrace for more details.", ex);
+            }
+            finally
+            {
+                Console.WriteLine();
+                Console.WriteLine("Press any key to exit!");
+                Console.ReadKey();
             }
         }
     }
