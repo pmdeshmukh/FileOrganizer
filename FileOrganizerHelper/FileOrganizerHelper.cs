@@ -25,7 +25,7 @@
         /// <summary>
         /// Prevents a default instance of the <see cref="FileOrganizerHelper"/> class from being created.
         /// </summary>
-        FileOrganizerHelper()
+        public FileOrganizerHelper()
         {
         }
 

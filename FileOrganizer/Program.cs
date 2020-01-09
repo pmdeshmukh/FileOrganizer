@@ -1,13 +1,14 @@
 namespace FileOrganizer
 {
     using System;
+    using System.Collections.Generic;
     using FileOrganizerHelper;
     using log4net;
 
     /// <summary>
     /// Program  class.
     /// </summary>
-    class Program
+    public class Program
     {
         /// <summary>
         /// The logger instance.
@@ -18,7 +19,7 @@ namespace FileOrganizer
         /// Defines the entry point of the application.
         /// </summary>
         /// <param name="args">The arguments.</param>
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             try
             {
@@ -48,4 +49,35 @@ namespace FileOrganizer
             }
         }
     }
+
+    class MyClass
+    {
+        // TypesOfEnvironments = {Mac, Windows}
+        // Retrieve TypesOfEnvironments based on input.
+        // Pass TypesOfEnvironments to my factory class.
+
+        //class Factory<T> where T : class
+        //{
+        //    public T CreateInstance<T>(string envType)
+        //    {
+        //        switch (envType)
+        //        {
+        //            case "windows":
+        //                 return windowsInstance;
+        //            case "mac":
+        //                return macInstance;
+        //            default:
+        //                break;
+        //        }
+        //    }
+        //}
+    }
+
+    //class DerivedClass : MyClass
+    //{
+    //    public override int Add(int a, int b)
+    //    {
+    //        return Convert.ToInt32(a.ToString() + b.ToString());
+    //    }
+    //}
 }
