@@ -30,9 +30,22 @@ namespace FileOrganizer
                 // Get source and destination file paths
                 var sourcePath = configurationHelper.GetSourceFilePath();
                 var destinationPath = configurationHelper.GetDestinationFilePath();
+                var reportDecorator = new ReportDecorator(fileOrganizerHelper);
 
                 // Organize the files
-                fileOrganizerHelper.OrganizeFiles(sourcePath, destinationPath);
+                try
+                {
+                    reportDecorator.OrganizeFiles(sourcePath, destinationPath);
+                    reportDecorator.UpdateSuccessCount();
+                }
+                catch (Exception ex)
+                {
+                    reportDecorator.UpdateFailureCount();
+                }
+                finally {
+                    reportDecorator.SaveReportCount();
+                }
+
                 Console.WriteLine($"Organized files successfully from \"{sourcePath}\" to \"{destinationPath}\"!! Please check \"{destinationPath}\" for output.");
             }
             catch (Exception ex)

@@ -47,6 +47,8 @@
     <Compile Include="IConfigurationHelper.cs" />
     <Compile Include="IFileOrganizerHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BaseDecorator.cs" />
+    <Compile Include="ReportDecorator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
